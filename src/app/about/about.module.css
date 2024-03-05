@@ -43,3 +43,15 @@
 .content p {
   margin-bottom: 3rem;
 }
+
+@media (max-width: 1441px) {
+  .banner img {
+    object-fit: cover;
+    height: 16rem;
+    margin-top: 4rem;
+  }
+
+  .banner::after {
+    font-size: 1.3rem;
+  }
+}
