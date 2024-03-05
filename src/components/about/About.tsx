@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./about.module.css";
-import mapSnapshot from "@/../public/locationSnapshot.svg";
+import mapSnapshot from "@/../public/locationSnapshot.png";
 
 const About = () => {
   return (
@@ -34,7 +34,13 @@ const About = () => {
             </ul>
           </div>
         </div>
-        <img className={styles.mapSnapshot} src={mapSnapshot.src} alt="map" />
+        <Link
+          className={styles.mapSnapshot}
+          target="_blank"
+          href="https://maps.app.goo.gl/RDkqNTQpYAauXNwT7"
+        >
+          <img src={mapSnapshot.src} alt="map" />
+        </Link>
       </div>
       <div className={styles.bottom}>
         <p>Destock © 2024. All Rights Reserved</p>

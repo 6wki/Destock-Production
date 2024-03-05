@@ -53,10 +53,14 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className={styles.locationDetails}>
+      <Link
+        target="_blank"
+        href={"https://maps.app.goo.gl/RDkqNTQpYAauXNwT7"}
+        className={styles.locationDetails}
+      >
         <img src={map.src} alt="map" />
         <p>20 avenue Gambetta 75020 paris</p>
-      </div>
+      </Link>
       <div className={styles.logo}>
         <Link href={"/"}>
           <h1>Destock</h1>
