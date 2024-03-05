@@ -82,7 +82,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
           <p>Category: {product.category}</p>
           <p>DLUO: {product.DLUO}</p>
         </DialogContent>
-        <DialogActions>
+        <DialogActions style={{ justifyContent: "start" }}>
           {/* <button className={styles.button2}>
             WhatsApp
             <svg

@@ -170,7 +170,7 @@
 
 .productsImage {
   position: absolute;
-  bottom: -6.5rem;
+  bottom: -8.5rem;
   left: 50%;
   width: 30rem;
   transform: translateX(-50%);
@@ -184,7 +184,7 @@
 }
 
 .categoryCard:hover img {
-  bottom: -6rem;
+  bottom: -8rem;
   scale: 1.1;
 }
 

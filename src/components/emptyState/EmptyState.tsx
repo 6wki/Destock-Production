@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./emptyState.module.css";
-import emptyState from "@/../public/noProduct.svg";
+import emptyState from "@/../public/noProduct.png";
 
 const EmptyState = () => {
   return (
@@ -10,8 +10,8 @@ const EmptyState = () => {
       <h3 className="">Aucun produit</h3>
       <p>Il n'y a aucun produit sur cette page</p>
       <Link href="/" className={styles.button}>
-        <span className={styles.shadow}></span>
-        <span className={styles.edge}></span>
+        <span className={styles.shadow} />
+        <span className={styles.edge} />
         <span className={`${styles.front} ${styles.text}`}>
           {" "}
           Aller à la page d'accueil{" "}

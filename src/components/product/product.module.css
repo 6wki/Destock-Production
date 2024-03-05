@@ -124,6 +124,7 @@
 
 .dialogCOntainer {
   text-align: center;
+  z-index: 99999999999;
 }
 
 .headline {
