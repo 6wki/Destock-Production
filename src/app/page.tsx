@@ -1,7 +1,6 @@
-import Image from "next/image";
+"use client";
+
 import styles from "./page.module.css";
-import map from "@/../public/mapLocation.svg";
-import phone from "@/../public/phoneCall.svg";
 import warehouse from "@/../public/warehouse.svg";
 import shopIcon from "@/../public/filledShopIcon.svg";
 import truck from "@/../public/deliveryTruck.svg";
@@ -13,11 +12,25 @@ import food from "@/../public/food.svg";
 import packaging from "@/../public/packaging.svg";
 import banner from "@/../public/banner.svg";
 import arrow from "@/../public/arrowRight.svg";
-import Product from "@/components/product/Product";
 import GeneralProducts from "../components/generalProducts/GeneralProducts";
 import Link from "next/link";
+import { useRef } from "react";
+import { SyntheticEvent } from "react";
 
-export default function Home() {
+const Home = () => {
+  const categoriesRef = useRef<HTMLDivElement>(null);
+
+  const scrollToCategories = () => {
+    if (categoriesRef.current) {
+      categoriesRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleButtonClick = (event: SyntheticEvent) => {
+    event.preventDefault();
+    scrollToCategories();
+  };
+
   return (
     <main className={styles.main}>
       <div className={styles.mainContainer}>
@@ -31,7 +44,7 @@ export default function Home() {
               Nous proposons des boissons, de la nourriture,
               <br /> des emballages, le tout en un seul endroit
             </p>
-            <button className={styles.shopNow}>
+            <button className={styles.shopNow} onClick={handleButtonClick}>
               <img src={shopIcon.src} alt="" />
               Achetez maintenant
             </button>
@@ -72,32 +85,32 @@ export default function Home() {
           </div>
         </div>
         {/* Categories */}
-        <div className={styles.categories}>
+        <div className={styles.categories} ref={categoriesRef}>
           <h2 className={styles.centeredHeadline}>Catégories</h2>
           <div className={styles.categoriesContainer}>
             <div className={styles.categoryCard}>
               <div className={styles.headerCategoryCard}>
                 <p>Les plus vendus</p>
                 <h2>Boissons fraîches</h2>
-                <button className={styles.cssbuttonsIoButton}>
-                  <Link href={"/products/boissons?page=1"}>
+                <Link href={"/products/boissons?page=1"}>
+                  <button className={styles.cssbuttonsIoButton}>
                     Achetez maintenant
-                  </Link>
-                  <div className={styles.icon}>
-                    <svg
-                      height="24"
-                      width="24"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M0 0h24v24H0z" fill="none"></path>
-                      <path
-                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                        fill="#1a1a1a"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
+                    <div className={styles.icon}>
+                      <svg
+                        height="24"
+                        width="24"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path
+                          d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                          fill="#1a1a1a"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                </Link>
               </div>
               <img
                 className={styles.productsImage}
@@ -112,25 +125,25 @@ export default function Home() {
                 <p>
                   A partir de <span>2.99£</span>
                 </p>
-                <button className={styles.cssbuttonsIoButton}>
-                  <Link href={"/products/alimentation?page=1"}>
+                <Link href={"/products/alimentation?page=1"}>
+                  <button className={styles.cssbuttonsIoButton}>
                     Achetez maintenant
-                  </Link>{" "}
-                  <div className={styles.icon}>
-                    <svg
-                      height="24"
-                      width="24"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M0 0h24v24H0z" fill="none"></path>
-                      <path
-                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                        fill="#1a1a1a"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
+                    <div className={styles.icon}>
+                      <svg
+                        height="24"
+                        width="24"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path
+                          d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                          fill="#1a1a1a"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                </Link>{" "}
               </div>
               <img className={styles.productsImage} src={food.src} alt="food" />
             </div>
@@ -143,25 +156,25 @@ export default function Home() {
                 <p>
                   Jusqu'à <span className={styles.promotion}>64% OFF</span>
                 </p>
-                <button className={styles.cssbuttonsIoButton}>
-                  <Link href={"/products/emballage?page=1"}>
+                <Link href={"/products/emballage?page=1"}>
+                  <button className={styles.cssbuttonsIoButton}>
                     Achetez maintenant
-                  </Link>
-                  <div className={styles.icon}>
-                    <svg
-                      height="24"
-                      width="24"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M0 0h24v24H0z" fill="none"></path>
-                      <path
-                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                        fill="#1a1a1a"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
+                    <div className={styles.icon}>
+                      <svg
+                        height="24"
+                        width="24"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path
+                          d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                          fill="#1a1a1a"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                </Link>
               </div>
               <img
                 className={styles.productsImage}
@@ -193,4 +206,6 @@ export default function Home() {
       </div>
     </main>
   );
-}
+};
+
+export default Home;
