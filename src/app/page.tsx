@@ -1,16 +1,16 @@
 "use client";
 
 import styles from "./page.module.css";
-import warehouse from "@/../public/warehouse.svg";
+import warehouse from "@/../public/warehouse.png";
 import shopIcon from "@/../public/filledShopIcon.svg";
 import truck from "@/../public/deliveryTruck.svg";
 import headphones from "@/../public/headphones.svg";
 import shoppingBag from "@/../public/shoppingBag.svg";
 import packageIcon from "@/../public/package.svg";
-import drinks from "@/../public/drinks.svg";
-import food from "@/../public/food.svg";
-import packaging from "@/../public/packaging.svg";
-import banner from "@/../public/banner.svg";
+import drinks from "@/../public/drinks.png";
+import food from "@/../public/food.png";
+import packaging from "@/../public/packaging.png";
+import banner from "@/../public/banner.png";
 import arrow from "@/../public/arrowRight.svg";
 import GeneralProducts from "../components/generalProducts/GeneralProducts";
 import Link from "next/link";
@@ -195,7 +195,7 @@ const Home = () => {
             <div className={styles.title}>
               <h2>Produits Populaires</h2>
               <Link href={"/products?page=1"} className={styles.viewAll}>
-                View All <img src={arrow.src} alt="" />{" "}
+                View All <img src={arrow.src} />{" "}
               </Link>
             </div>
             <div className={styles.products}>
