@@ -48,8 +48,16 @@
   color: var(--soft-gray);
 }
 
-.mapSnapshot {
+.mapSnapshot img {
   height: 10rem;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.mapSnapshot {
+  width: 44%;
 }
 
 .left {
@@ -108,7 +116,7 @@
   }
 
   .mapSnapshot {
-    width: 85%;
+    width: 100% !important;
     margin: 2rem 0;
   }
 
