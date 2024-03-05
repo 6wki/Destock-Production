@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./about.module.css";
-import mapSnapshot from "@/../public/locationSnapshot.png";
+import mapSnapshot from "@/../public/snapshotMap.png";
 
 const About = () => {
   return (
